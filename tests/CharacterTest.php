@@ -27,6 +27,37 @@ class CharacterTest extends TestCase {
 		$gokuLife= $goku->getLife();
 		$this->assertEquals(true,$gokuLife);
 	} 
+	public function test_character_takes_damague()
+	{
+		$vegeta= new Character;
+		$krilin = new Character;
+
+		$vegeta->attack($krilin,200);
+		$result = $krilin->getHealth();
+		$this->assertEquals(800, $result);
+	} 
+	public function test_when_healht_equal_0_he_died()
+	{
+      $vegeta =new Character;
+	  $krilin =new Character;
+
+	  $vegeta->attack($krilin,1000);
+	  $result = $krilin->getHealth();
+	  $this->assertEquals(0, $result);
+	  $this->assertEquals(false,$krilin->getLife());
+
+	} 
+	public function test_chararter_can_heald_anoter_chararter()
+	{
+      $vegeta =new Character;
+	  $krilin =new Character;
+	  $krilin=>setHealth(800);
+
+      $vegeta->healt($krilin,200);
+	  $this->assertEquals(1000,$krilin->getHealth());
+
+
+	} 
 	
 	
 	

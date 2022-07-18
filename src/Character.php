@@ -28,7 +28,19 @@ use phpDocumentor\Reflection\Types\This;
     }
     public function getLife()
     {
+        if($this->health <= 0) {
+            $this->live=false;
+            return $this->live;
+        }
         return $this->live;
+    }
+    public function attack($enemy,$attackPoins)
+    {
+        $enemy->health = $enemy->health - $attackPoins;
+    }
+    public function healt($friend,$healPoins)
+    {
+        $friend->health = $friend->health + $healPoins;
     }
 
     
