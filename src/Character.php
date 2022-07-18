@@ -22,6 +22,11 @@ use phpDocumentor\Reflection\Types\This;
     {
         return $this->health;
     }
+    public function setHealth($health)
+    {
+        $this->health = $health;
+        return $this;
+    }
     public function getLevel()
     {
         return $this->level;

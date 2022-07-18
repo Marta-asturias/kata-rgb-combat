@@ -51,7 +51,7 @@ class CharacterTest extends TestCase {
 	{
       $vegeta =new Character;
 	  $krilin =new Character;
-	  $krilin=>setHealth(800);
+	  $krilin->setHealth(800);
 
       $vegeta->healt($krilin,200);
 	  $this->assertEquals(1000,$krilin->getHealth());
